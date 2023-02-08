@@ -6,7 +6,7 @@ public class HandModel extends List<CardModel>(Model deck){
 
     };
     public calcPoints(){
-        //
+        //сложить card
 
 
         };
