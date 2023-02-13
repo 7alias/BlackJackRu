@@ -13,6 +13,9 @@ public class CardModel {
   
 
     public CardModel(String suit, String label) {
+
+
+
     }
     // Не понятно зачем нужен этот конструктор.
     // С виду - это конструктор копирования, но я не заметил чтобы он где-то вызывался.
