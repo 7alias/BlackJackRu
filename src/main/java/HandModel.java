@@ -17,7 +17,7 @@ public class HandModel extends List<CardModel>(Model deck){
     // Разве функция не должна вернуть значение?
     // Разве не должно быть public int calcPoints()?
     public calcPoints(){
-        //
+        //сложить card
 
 
         };

@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.List;
 
 public class DeckModel {
@@ -7,6 +6,14 @@ public class DeckModel {
     // Почитай что такое static и зачем он нужен.
     // Нейминг: я бы назвал переменную cardsList - оно идельно описывает что это за переменная.
     private static List<CardModel> deckModel;
+
+
+
+    public void remove(){
+
+
+    };
+
 
     // Какая-то пустоваятая модель колоды, не кажется?)
     // Колода - это уровень абстрации, поле deckModel у тебя приватное, никто к нему доступ из вне не имеет. И это правильно.
@@ -17,4 +24,5 @@ public class DeckModel {
     //    // TODO: Add card to the deck
     // }
     // Придумай все, что можно сделать с колодой и опиши в таком виде.
+
 }
