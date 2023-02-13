@@ -19,14 +19,9 @@ public class CardModel {
 
     }
 
-    public String getCard() {
-        StringBuilder sb = new StringBuilder();
-        return sb.append(this.rank).append(" ").append(this.suit).toString();
-
-    }
 
 
-    // Не понятно зачем нужен этот конструктор.
+    // Не понятно зачем нужен этот конструктор.: убрал
     // С виду - это конструктор копирования, но я не заметил чтобы он где-то вызывался.
     // Зато не хватает нормального конструктора: public CardModel(String suit, String label).
     // В остальном, модель правильная, карта описывается двумя параметрами, ничего лишнего.

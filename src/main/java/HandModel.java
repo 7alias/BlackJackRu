@@ -5,15 +5,17 @@ import java.util.List;
 // Лучше использовать паттерн "Композиция", как это сделано в DeckModel.
 public class HandModel {
 
-    List<CardModel> handCards = new ArrayList<>();
+    List<CardModel> cardsHand = new ArrayList<>();
 
     public HandModel() {
      //   this.handCards.add(new CardView(5,4));
     }
+    public void addCard(CardModel card) {
+        this.cardsHand.add(card);
 
-    public HandModel(List<CardModel> handCards) {
-        this.handCards = handCards;
     }
+
+
 }
 
 // А разве у функции не указыватся возвращаемый тип в обязательном порядке?
