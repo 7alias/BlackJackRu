@@ -4,17 +4,12 @@ public class CardView {
     private String value;
     private String suit;
 
-
-
-
-
         CardView (CardModel model){
             this.card = model;
         }
 
-
-    public String getView() {
-        return value + " " + suit;
+    public String getView(CardModel card) {
+        return card.getCard();
     }
 }
 

@@ -8,10 +8,11 @@ public class DeckModel {
     // Почитай что такое static и зачем он нужен.
     // Нейминг: я бы назвал переменную cardsList - оно идеально описывает что это за переменная.
 
-List<String> cardDeck = new DeckModel();
+    List<String> cardList = new ArrayList<>(52);
+
     // Какая-то пустоватая модель колоды, не кажется?)
     // Колода - это уровень абстракции, поле deckModel у тебя приватное, никто к нему доступ из вне не имеет. И это правильно.
-    // Но тогда должны быть методы работы с колодой. Подумай нед тем, какие операции мы можем с колодой совершать.
+    // Но тогда должны быть методы работы с колодой. Подумай над тем, какие операции мы можем с колодой совершать.
     // Напиши для начала имя функции без реализации, это называется "декомпозиция".
     // Пример:
     // public void addCard(CardModel card) {
@@ -20,51 +21,45 @@ List<String> cardDeck = new DeckModel();
     // Придумай все, что можно сделать с колодой и опиши в таком виде.
 
 
-    public void addCard(CardModel card) {
+    public void addCards(CardModel card) {
         //    // TODO: Add card to the deck
-        String[] cardSuit = {"♠", "♥", "♦", "♣"};
-        String[] cardRank = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"};
-        for (int i = 0; i < cardRank.length; i++) {
-StringBuilder sb = new StringBuilder();
-            for (String rank : cardDeck) {
-                for (String suit : cardSuit) {
-                    cardDeck.add(sb.toString(new CardModel(rank, suit)));
-                }
-            }
-            Collections.shuffle(cardDeck);
-        }
-        return cardDeck;
 
+        for (int i = 0; i < cardList.size(); i++) {
+
+            for (String rank : cardList) {
+
+                cardList.add(card.getCard());
+            }
+        }
+        Collections.shuffle(cardList);
     }
+
 
     public void remove() {
+        cardList.remove(0);
+    }
 
+    public String getCard() {
 
-        List<CardModel> cardsList;
-        public List getCard() {
-
-            return getCard.get(0);
-        }
-
-        public void remove () {
-
-
-
-        }
-
-
+        return this.cardList.get(0);
     }
 
 
-    // Какая-то пустоваятая модель колоды, не кажется?)
-    // Колода - это уровень абстрации, поле deckModel у тебя приватное, никто к нему доступ из вне не имеет. И это правильно.
-    // Но тогда должны быть методы работы с колодой. Подумай нед тем, какие опреации мы можем с колодой совершать.
-    // Напиши для начала имя функции без реализации, это называется "декомпозиция".
-    // Пример:
-    // public void addCard(CardModel card) {
-    //    // TODO: Add card to the deck
-    // }
-    // Придумай все, что можно сделать с колодой и опиши в таком виде.
-
 }
+
+
+
+
+
+            // Какая-то пустоваятая модель колоды, не кажется?)
+            // Колода - это уровень абстрации, поле deckModel у тебя приватное, никто к нему доступ из вне не имеет. И это правильно.
+            // Но тогда должны быть методы работы с колодой. Подумай нед тем, какие опреации мы можем с колодой совершать.
+            // Напиши для начала имя функции без реализации, это называется "декомпозиция".
+            // Пример:
+            // public void addCard(CardModel card) {
+            //    // TODO: Add card to the deck
+            // }
+            // Придумай все, что можно сделать с колодой и опиши в таком виде.
+
+
 

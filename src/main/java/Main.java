@@ -4,18 +4,21 @@ import java.util.List;
 
 public class Main {
 
-    private static HandModel dealerCards = new HandModel();
-    private static HandModel playerCards = new HandModel();
-    private static List<DeckModel> deck = new ArrayList<>();
-    private static String[] suit;
-
-
-
 
     public static void main(String[] args) {
-        for (CardModel cardValue : playerCards) {
+
+
+        GameController gameController = new GameController();
+
+
+        gameController.newCard(0,0);
+        gameController.newCard(0,1);
+        gameController.newCard(0,2);
+        gameController.newCard(0,3);
+
+        /*for (CardModel cardValue : playerCards) {
             for (String suit : suit) {
-                deck.add(new CardModel(suit, cardValue));
+                deck.add(card);
             }
         }
         Collections.shuffle(deck);
@@ -24,5 +27,7 @@ public class Main {
 
 
     }
-    takeCardFromDeck();
+    abstract void takeCardFromDeck();
+    */
+    }
 }

@@ -1,18 +1,20 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
-
 
 // Не стоит наследоваться от Generic типов, вроде List.
 // Лучше использовать паттерн "Композиция", как это сделано в DeckModel.
 public class HandModel {
-    int points;
-    Set<CardModel> cardSet;
 
-    public HandModel(Set<CardModel> cardSet) {
-        this.cardSet = cardSet;
+    List<CardModel> handCards = new ArrayList<>();
+
+    public HandModel() {
+        this.handCards.add(new CardModel("", ""));
     }
 
+    public HandModel(List<CardModel> handCards) {
+        this.handCards = handCards;
+    }
+}
 
 // А разве у функции не указыватся возвращаемый тип в обязательном порядке?
 // Разве не должно быть public void addCard(CardModel card)?
@@ -22,16 +24,16 @@ public class HandModel {
 // Лучше использовать паттерн "Композиция", как это сделано в DeckModel.
 
 
-    // А разве у функции не указыватся возвращаемый тип в обязательном порядке?
-    // Разве не должно быть public void addCard(CardModel card)?
+// А разве у функции не указыватся возвращаемый тип в обязательном порядке?
+// Разве не должно быть public void addCard(CardModel card)?
 
-        // Всегда оставляй в пустых методах TODO, например:
-        // TODO: Add card to the hand
-        // Если нужно сделать несколько вещей - пиши для каждой свой TODO на отдельной строке.
-        // Еще как защита от дурака, можно дополнительно вызывать throw new NotImplementedException();
+// Всегда оставляй в пустых методах TODO, например:
+// TODO: Add card to the hand
+// Если нужно сделать несколько вещей - пиши для каждой свой TODO на отдельной строке.
+// Еще как защита от дурака, можно дополнительно вызывать throw new NotImplementedException();
 
 
-    // Разве функция не должна вернуть значение?
+// Разве функция не должна вернуть значение?
 // Разве не должно быть public int calcPoints()?
     /*
     public int calcPoints() {
@@ -42,19 +44,16 @@ public class HandModel {
         } return points;
     }
 */
-    public void setCardSet(CardModel card) {
-        this.cardSet.add(card);
-    }
 
 
-    // Разве функция не должна вернуть значение?
-    // Разве не должно быть public int calcPoints()?
+// Разве функция не должна вернуть значение?
+// Разве не должно быть public int calcPoints()?
 
 
 // Я думаю splitDeck тут не уместен, так как если игрок засплитил руку - то у него становится 2 полноценные руки.
 //public splitDeck(){};
 
-}
+
 
 // Я думаю splitDeck тут не уместен, так как если игрок засплитил руку - то у него становится 2 полноценные руки.
 //public splitDeck(){}
