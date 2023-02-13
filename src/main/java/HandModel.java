@@ -1,16 +1,29 @@
 import java.util.List;
 
-public class HandModel extends List<CardModel>(Model deck){
+// Не стоит наследоваться от Generic типов, вроде List.
+// Лучше использовать паттерн "Композиция", как это сделано в DeckModel.
+public class HandModel  {
+    int points;
 
-    public addCard(CardModel card){
+// А разве у функции не указыватся возвращаемый тип в обязательном порядке?
+// Разве не должно быть public void addCard(CardModel card)?
+public void addCard(CardModel card){
+        // Всегда оставляй в пустых методах TODO, например:
+        // TODO: Add card to the hand
+        // Если нужно сделать несколько вещей - пиши для каждой свой TODO на отдельной строке.
+        // Еще как защита от дурака, можно дополнительно вызывать throw new NotImplementedException();
+}
 
-    };
-    public calcPoints(){
+// Разве функция не должна вернуть значение?
+// Разве не должно быть public int calcPoints()?
+public int calcPoints(){
         //сложить card
+return points;
 
+        }
 
-        };
-    public splitDeck(){};
+// Я думаю splitDeck тут не уместен, так как если игрок засплитил руку - то у него становится 2 полноценные руки.
+//public splitDeck(){};
 
     /*
     Короче, есть раздача (рука) и есть методы которые описывают возможные действия с этой рукой.
@@ -18,4 +31,4 @@ public class HandModel extends List<CardModel>(Model deck){
     Либо ты просишь "еще" - это addCard, либо ты считаешь сколько у тебя очков в руке  - calcPoints()
      */
 
-}
+        }
