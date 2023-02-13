@@ -12,9 +12,9 @@ public class Main {
 
 
         gameController.newCard(0,0);
-        gameController.newCard(0,1);
-        gameController.newCard(0,2);
-        gameController.newCard(0,3);
+        DeckModel deckModel = new DeckModel();
+        deckModel.addCards();
+        //deckModel.getCard(0);
 
         /*for (CardModel cardValue : playerCards) {
             for (String suit : suit) {

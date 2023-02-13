@@ -21,45 +21,42 @@ public class DeckModel {
     // Придумай все, что можно сделать с колодой и опиши в таком виде.
 
 
-    public void addCards(CardModel card) {
+    public void addCards() {
         //    // TODO: Add card to the deck
-
-        for (int i = 0; i < cardList.size(); i++) {
-
-            for (String rank : cardList) {
-
-                cardList.add(card.getCard());
+        GameController gameController = new GameController();
+        for (int i = 0; i <= 12; i++) {
+            for (int j = 0; j <= 3; j++) {
+                cardList.add(gameController.newCard(i, j));
             }
-        }
-        Collections.shuffle(cardList);
-    }
 
+
+            Collections.shuffle(cardList);
+        }
+
+    }
 
     public void remove() {
         cardList.remove(0);
     }
 
-    public String getCard() {
+    public String getCard(int n) {
 
-        return this.cardList.get(0);
+        return this.cardList.get(n);
     }
 
 
 }
 
 
-
-
-
-            // Какая-то пустоваятая модель колоды, не кажется?)
-            // Колода - это уровень абстрации, поле deckModel у тебя приватное, никто к нему доступ из вне не имеет. И это правильно.
-            // Но тогда должны быть методы работы с колодой. Подумай нед тем, какие опреации мы можем с колодой совершать.
-            // Напиши для начала имя функции без реализации, это называется "декомпозиция".
-            // Пример:
-            // public void addCard(CardModel card) {
-            //    // TODO: Add card to the deck
-            // }
-            // Придумай все, что можно сделать с колодой и опиши в таком виде.
+// Какая-то пустоваятая модель колоды, не кажется?)
+// Колода - это уровень абстрации, поле deckModel у тебя приватное, никто к нему доступ из вне не имеет. И это правильно.
+// Но тогда должны быть методы работы с колодой. Подумай нед тем, какие опреации мы можем с колодой совершать.
+// Напиши для начала имя функции без реализации, это называется "декомпозиция".
+// Пример:
+// public void addCard(CardModel card) {
+//    // TODO: Add card to the deck
+// }
+// Придумай все, что можно сделать с колодой и опиши в таком виде.
 
 
 

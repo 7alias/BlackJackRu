@@ -8,7 +8,7 @@ public class HandModel {
     List<CardModel> handCards = new ArrayList<>();
 
     public HandModel() {
-        this.handCards.add(new CardModel("", ""));
+     //   this.handCards.add(new CardView(5,4));
     }
 
     public HandModel(List<CardModel> handCards) {
