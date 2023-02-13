@@ -22,14 +22,12 @@ public class DeckModel {
 
 
     public void addCards() {
-        //    // TODO: Add card to the deck
+        //    TODO: Add card to the deck
         GameController gameController = new GameController();
         for (int i = 0; i <= 12; i++) {
             for (int j = 0; j <= 3; j++) {
                 cardList.add(gameController.newCard(i, j));
             }
-
-
             Collections.shuffle(cardList);
         }
 
@@ -39,24 +37,16 @@ public class DeckModel {
         cardList.remove(0);
     }
 
-    public String getCard(int n) {
+    public String getCard() {
 
-        return this.cardList.get(n);
+        String card = cardList.get(0);
+        this.cardList.remove(0);
+        return card;
+
+
     }
 
-
 }
-
-
-// Какая-то пустоваятая модель колоды, не кажется?)
-// Колода - это уровень абстрации, поле deckModel у тебя приватное, никто к нему доступ из вне не имеет. И это правильно.
-// Но тогда должны быть методы работы с колодой. Подумай нед тем, какие опреации мы можем с колодой совершать.
-// Напиши для начала имя функции без реализации, это называется "декомпозиция".
-// Пример:
-// public void addCard(CardModel card) {
-//    // TODO: Add card to the deck
-// }
-// Придумай все, что можно сделать с колодой и опиши в таком виде.
 
 
 
