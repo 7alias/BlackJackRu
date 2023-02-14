@@ -2,39 +2,24 @@ public class Main {
 
 
     public static void main(String[] args) {
+        Game game = new Game();
+        game.newDeck();
+        GameView gameView = new GameView();
+        gameView.getView(game.getCard());
 
 
-        GameController gameController = new GameController() {
-            @Override
-            public void newGame() {
+        while (true) {
+            try {
+                for (int i = 0; i < 13; i++) {
+                    System.out.print("|" + game.getCard());
+                }
+                System.out.println();
 
+
+            } catch (Exception e) {
+                System.out.println("Карты закончились");
+                break;
             }
-
-            @Override
-            public String newCard(int rank, int suit) {
-                return null;
-            }
-
-            @Override
-            public void newDeck() {
-
-            }
-
-            @Override
-            public void takeCard(CardModel card) {
-
-            }
-        };
-        DeckModel deckModel = new DeckModel();
-        deckModel.addCards();
-
-        gameController.newCard(0, 0);
-
-        gameController.newDeck();
-
-        gameController.takeCard(GameController);
-
-
-
+        }
     }
 }

@@ -1,56 +1,33 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Game implements GameController {
-
+/*
+1. CardModel
+2. DeckModel - List<CardModel>
+3. HandModel - List<CardModel>
+4. GameModel - DeckModel + List<HandModel>
+5. GameView - умеет нарисовать отдельно карту, отдельно руку, отдельно колоду и всё состояние стола
+6. GameController - умеет посчитать очки, обработать команду от пользователя, изменить GameModel
+ */
+public class Game {
+    String card;
     private static HandModel dealerCards = new HandModel();
     private static HandModel playerCards = new HandModel();
-    private static List<DeckModel> deck = new ArrayList<>();
-    private static String[] suit;
-    String[] cardSuit = {"♠", "♥", "♦", "♣"};
-    String[] cardRank = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"};
-
-    @Override
-    public void newGame() {
-
-    }
-
-    public String newCard(int rank, int suit) {
-        CardModel card = new CardModel(cardSuit[suit], cardRank[rank]);
-        CardView cardView = new CardView(card);
-
-//        System.out.println(cardView.getView(card));
-
-        return cardView.getView(card);
-    }
+    private static List<String> deck = new ArrayList<>(52);
 
 
     public void newDeck() {
-
         DeckModel deckModel = new DeckModel();
-        deckModel.addCards();
 
-        int index = 1;
-        while (true) {
-            try {
-                System.out.print(deckModel.getCard());
-                System.out.print(" " + index++ + " ");
-            } catch (Exception e) {
-                System.out.println("Карты закончились");
-                break;
-            }
-        }
-
+        deck = deckModel.addCards();
     }
 
-    public void takeCard(CardModel card) {
-        int index = 0;
-        try {
-            System.out.print(card);
-            System.out.print(" " + index++ + " ");
-        } catch (Exception e) {
-            System.out.println("Карты закончились");
-        }
+    public String getCard() {
+        String card = this.deck.get(0);
+        deck.remove(0);
+        return card;
+
     }
 }
-}
+
+
